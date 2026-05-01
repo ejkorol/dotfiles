@@ -144,6 +144,9 @@ keybinds clear-defaults=true {
             SwitchToMode "normal"
         }
     }
+    shared_except "session" "locked" {
+        unbind "Ctrl o"
+    }
     shared_except "locked" {
         bind "Alt left" { MoveFocusOrTab "left"; }
         bind "Alt down" { MoveFocus "down"; }

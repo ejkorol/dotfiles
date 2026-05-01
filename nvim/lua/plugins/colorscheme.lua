@@ -1,9 +1,17 @@
 return {
   {
     "datsfilipe/vesper.nvim",
-    lazy = false,    -- load at startup, not on demand
-    priority = 1000, -- load before other plugins so colors apply cleanly
+    lazy = false,
+    priority = 1000,
     config = function()
+      require("vesper").setup({
+        italics = {
+          comments = true,
+          keywords = false,
+          functions = false,
+          variables = false,
+        },
+      })
       vim.cmd.colorscheme("vesper")
     end,
   },

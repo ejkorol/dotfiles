@@ -12,7 +12,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
+      { out,                            "WarningMsg" },
     }, true, {})
     vim.fn.getchar()
     os.exit(1)
@@ -20,8 +20,12 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+vim.keymap.set('n', '<leader>v', '<cmd>vsplit<CR><C-w>l')
+vim.keymap.set('n', '<C-w>v', '<C-w>v<C-w>l')
+
+vim.opt.wrap = false
 vim.opt.fillchars = { eob = " " }
-vim.opt.number = true 
+vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2

@@ -4,7 +4,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     dependencies = { "williamboman/mason.nvim" },
     opts = {
-      ensure_installed = { "lua_ls", "ts_ls" },
+      ensure_installed = { "lua_ls", "ts_ls", "oxc_language_server" },
       automatic_enable = true, -- auto vim.lsp.enable() for installed servers
     },
   },
@@ -19,6 +19,9 @@ return {
 
       -- Apply nvim-cmp capabilities to every LSP config
       vim.lsp.config("*", { capabilities = capabilities })
+
+      -- oxlint
+      vim.lsp.enable('oxlint')
 
       -- Per-server tweaks. lua_ls needs to know `vim` is a global or it'll yell.
       vim.lsp.config("lua_ls", {
@@ -43,6 +46,7 @@ return {
       vim.api.nvim_create_autocmd("LspAttach", {
         callback = function(event)
           local opts = { buffer = event.buf, silent = true }
+          vim.keymap.set("n", "<leader>de", vim.diagnostic.open_float, opts)
           vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
           vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
           vim.keymap.set("n", "K", function()
