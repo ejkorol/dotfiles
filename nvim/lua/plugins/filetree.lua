@@ -31,7 +31,7 @@ return {
         indent_markers = { enable = true }
       },
       view = {
-        width = 35
+        width = 40
       }
     },
   },
