@@ -20,8 +20,13 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.keymap.set('n', '<leader>v', '<cmd>vsplit<CR><C-w>l')
 vim.keymap.set('n', '<C-w>v', '<C-w>v<C-w>l')
+
+-- quick split
+vim.keymap.set('n', '<leader>v', '<cmd>vsplit<CR><C-w>l')
+
+-- go back from 'gd'
+vim.keymap.set('n', 'gb', '<C-o>')
 
 vim.opt.wrap = false
 vim.opt.fillchars = { eob = " " }

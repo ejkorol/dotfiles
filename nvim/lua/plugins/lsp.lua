@@ -4,7 +4,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     dependencies = { "williamboman/mason.nvim" },
     opts = {
-      ensure_installed = { "lua_ls", "ts_ls", "oxlint", "oxfmt", "tailwindcss-language-server" },
+      ensure_installed = { "lua_ls", "ts_ls", "oxlint", "oxfmt", "tailwindcss" },
       automatic_enable = true, -- auto vim.lsp.enable() for installed servers
     },
   },
