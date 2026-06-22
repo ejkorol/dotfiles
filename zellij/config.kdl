@@ -305,6 +305,7 @@ simplified_ui true
 // Default: default
 // 
 theme "vesper"
+// theme "glass"
  
 // Choose the base input mode of zellij.
 // Default: normal
@@ -323,7 +324,7 @@ theme "vesper"
 // The name of the default layout to load on startup
 // Default: "default"
 // 
-default_layout "compact"
+default_layout "default"
  
 // The folder in which Zellij will look for layouts
 // (Requires restart)

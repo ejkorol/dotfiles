@@ -5,6 +5,7 @@ return {
     priority = 1000,
     config = function()
       require("vesper").setup({
+        transparent = true,
         italics = {
           comments = true,
           keywords = false,

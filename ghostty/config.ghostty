@@ -1,0 +1,9 @@
+theme = Vesper
+font-family = "GeistMono Nerd Font Mono"
+font-size = 14
+font-style-italic = false
+font-style-bold-italic = false
+macos-option-as-alt = true
+custom-shader = shaders/cursor_sweep.glsl
+background-opacity = 0.2
+background-blur = macos-glass-regular
