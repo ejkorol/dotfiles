@@ -36,8 +36,8 @@ return {
       -- Float window styling for hover / signature help.
       -- Wrapped in a function + autocmd so the colorscheme can't clobber it.
       local function set_float_hl()
-        -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#000000" })
-        -- vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#666666", bg = "#000000" })
+        vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+        vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#303030", bg = "none" })
       end
       set_float_hl()
       vim.api.nvim_create_autocmd("ColorScheme", { callback = set_float_hl })

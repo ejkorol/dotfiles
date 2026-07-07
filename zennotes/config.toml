@@ -21,7 +21,7 @@ which_key_hint_mode = "timed"  # timed | sticky
 which_key_hint_timeout_ms = 900  # how long timed hints stay visible (ms)
 
 [search]
-backend = "auto"  # auto | builtin | ripgrep | fzf
+backend = "ripgrep"  # auto | builtin | ripgrep | fzf
 ripgrep_path = ""  # absolute path to ripgrep; empty = look on $PATH
 fzf_path = ""  # absolute path to fzf; empty = look on $PATH
 
@@ -32,20 +32,21 @@ markdown_snippets = true  # auto-close markdown delimiters while typing
 hide_builtin_templates = false  # hide the shipped templates from the pickers
 tabs_enabled = true  # enable tab-based editing
 wrap_tabs = false  # wrap the tab strip instead of scrolling it
-font_size = 14  # editor + preview font size (px)
+font_size = 13  # editor + preview font size (px)
 line_height = 1.7  # line-height multiplier
 preview_max_width = 920  # max reading width for the preview (px)
 editor_max_width = 920  # max width of the editor column (px)
-line_number_mode = "off"  # off | absolute | relative
-line_number_position = "text"  # text | edge
+line_number_mode = "relative"  # off | absolute | relative
+line_number_position = "edge"  # text | edge
 word_wrap = true  # wrap long lines vs. scroll horizontally
 preview_smooth_scroll = true  # animate half-page scroll in the preview
 pdf_embed_in_edit_mode = "compact"  # compact | full
 
 [appearance]
-theme_family = "apple"  # apple | gruvbox | catppuccin | github | solarized | one | nord | tokyo-night | kanagawa | black-metal
+pdf_export_use_theme = false  # true | false — export PDFs using the current theme instead of a clean light print theme
+theme_family = "black-metal"  # apple | gruvbox | catppuccin | github | solarized | one | nord | tokyo-night | kanagawa | black-metal | custom
 theme_mode = "dark"  # light | dark | auto
-theme_id = "apple-dark"  # resolved theme id; normally set automatically from family + mode
+theme_id = "black-metal"  # resolved theme id; normally set automatically from family + mode
 dark_sidebar = true  # tint the sidebar darker than the canvas
 show_sidebar_chevrons = true  # show disclosure arrows in the sidebar
 content_align = "center"  # center | left
@@ -59,8 +60,9 @@ mono_font = "GeistMono Nerd Font Mono"  # code / monospace font; empty = system 
 [view]
 note_sort_order = "none"  # none | manual | updated-desc | updated-asc | created-desc | created-asc | name-asc | name-desc
 group_by_kind = true  # group notes by kind in the list
+view_settings_scope = "global"  # apply note/list view settings globally or per vault (global | vault)
 auto_reveal = false  # auto-expand the sidebar to the active note
-quick_note_date_title = false  # title quick notes by date instead of a timestamp
+quick_note_date_title = true  # title quick notes by date instead of a timestamp
 quick_note_title_prefix = "Quick Note"  # prefix for new quick-note titles; empty = bare timestamp
 auto_calendar_panel = true  # auto-show the calendar for daily / weekly notes
 calendar_week_start = "monday"  # monday | sunday | locale
@@ -94,6 +96,7 @@ kanban_group_by = "status"  # status | priority | folder
 # "global.modePreview" = "Mod+6"  # Switch to preview mode
 # "global.toggleZenMode" = "Mod+."  # Toggle Zen mode
 # "global.closeActiveTab" = "Mod+W"  # Close active tab
+# "global.reopenClosedTab" = "Shift+Mod+T"  # Reopen closed tab
 # "global.toggleWordWrap" = "Alt+Z"  # Toggle word wrap
 # "global.exportNotePdf" = "Shift+Mod+E"  # Export note as PDF
 # "global.zoomIn" = "Mod+="  # Zoom in
@@ -174,3 +177,11 @@ kanban_group_by = "status"  # status | priority | folder
 # Kanban column title overrides, keyed by "<groupBy>:<columnId>".
 # Example: "status:todo" = "To Do"
 [kanban_column_titles]
+
+# Enabled CSS overrides — list the filenames you want active.
+# Example: "focus.css" = "on"
+[overrides]
+
+# Visual color tweaks from Settings → Appearance (token slug = color).
+# Example: "accent" = "#ff3b30"
+[tweaks]
