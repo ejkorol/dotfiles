@@ -40,9 +40,6 @@ return {
       -- floats
       vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
       vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#303030", bg = "none" })
-
-      -- lualine
-      vim.api.nvim_set_hl(0, "LualineBorder", { fg = "#505050" }) -- pick your color
     end,
   },
 }
