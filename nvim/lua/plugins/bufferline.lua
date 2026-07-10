@@ -30,7 +30,7 @@ return {
       },
       options = {
         offsets = {
-          { filetype = "NvimTree", text = "Files", text_align = "left", separator = true, highlight = "NvimTreeNormal" },
+          { filetype = "neo-tree", text = "Explorer", text_align = "left", separator = true, highlight = "directory" },
         },
         diagnostics = "nvim_lsp",
         show_buffer_close_icons = false,
