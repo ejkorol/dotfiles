@@ -15,14 +15,6 @@ return {
       },
     },
     config = function()
-      local set_hl = function()
-        vim.api.nvim_set_hl(0, "IblIndent", { fg = "#1e1e1e" })
-        vim.api.nvim_set_hl(0, "IblScope", { fg = "#F97316" })
-      end
-
-      set_hl()
-      vim.api.nvim_create_autocmd("ColorScheme", { callback = set_hl })
-
       require("ibl").setup({
         indent = {
           char = "┊",

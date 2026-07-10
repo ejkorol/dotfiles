@@ -39,22 +39,5 @@ return {
         style_preset = "minimal"
       },
     },
-    config = function(_, opts)
-      require("bufferline").setup(opts)
-      vim.api.nvim_create_autocmd("ColorScheme", {
-        pattern = "vesper",
-        callback = function()
-          vim.api.nvim_set_hl(0, "BufferLineFill", { bg = "NONE" })
-          vim.api.nvim_set_hl(0, "BufferLineBackground", { fg = "#585b70", bg = "NONE" })
-          vim.api.nvim_set_hl(0, "BufferLineTabLineFill", { bg = "NONE" })
-          vim.api.nvim_set_hl(0, "BufferLineBufferSelected", { bold = false, fg = "#89dceb", bg = "NONE" })
-          vim.api.nvim_set_hl(0, "BufferLineIndicatorSelected", { fg = "#89dceb", bg = "NONE" })
-        end,
-      })
-      -- also apply immediately in case colorscheme already loaded
-      vim.api.nvim_set_hl(0, "BufferLineFill", { bg = "NONE" })
-      vim.api.nvim_set_hl(0, "BufferLineBackground", { bg = "NONE" })
-      vim.api.nvim_set_hl(0, "TabLineFill", { bg = "NONE" })
-    end,
   },
 }
