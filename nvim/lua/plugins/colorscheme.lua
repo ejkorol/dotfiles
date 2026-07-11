@@ -21,7 +21,7 @@ return {
 
       -- neotree
       vim.api.nvim_set_hl(0, "NeoTreeTabActive", { fg = "#e0e0e0", bg = "NONE" })
-      vim.api.nvim_set_hl(0, "NeoTreeTabInactive", { fg = "#3c3c3c", bg = "NONE" })
+      vim.api.nvim_set_hl(0, "NeoTreeTabInactive", { fg = "#505050", bg = "NONE" })
       vim.api.nvim_set_hl(0, "NeoTreeTabSeparatorActive", { fg = "NONE", bg = "NONE" })
       vim.api.nvim_set_hl(0, "NeoTreeTabSeparatorInactive", { fg = "NONE", bg = "NONE" })
 
@@ -34,7 +34,7 @@ return {
       vim.api.nvim_set_hl(0, "TabLineFill", { bg = "NONE" })
 
       -- blankline
-      vim.api.nvim_set_hl(0, "IblIndent", { fg = "#1e1e1e" })
+      vim.api.nvim_set_hl(0, "IblIndent", { fg = "#505050" })
       vim.api.nvim_set_hl(0, "IblScope", { fg = "#F97316" })
 
       -- floats
