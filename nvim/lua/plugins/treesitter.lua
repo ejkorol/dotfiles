@@ -1,33 +1,47 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    branch = "master",
+    branch = "main",
+    lazy = false, -- main branch does not support lazy-loading
     build = ":TSUpdate",
-    event = { "BufReadPre", "BufNewFile" },
     config = function()
-      require("nvim-treesitter.configs").setup({
-        ensure_installed = {
-          "lua", "vim", "vimdoc", "query",
-          "javascript", "typescript", "tsx",
-          "html", "css", "json", "yaml", "toml",
-          "markdown", "markdown_inline",
-          "bash", "regex",
-        },
-        auto_install = true,           -- auto-fetch parsers for filetypes not in the list
-        highlight = {
-          enable = true,
-          additional_vim_regex_highlighting = false,
-        },
-        indent = { enable = true },
-        incremental_selection = {
-          enable = true,
-          keymaps = {
-            init_selection    = "<C-space>",
-            node_incremental  = "<C-space>",
-            node_decremental  = "<BS>",
-            scope_incremental = false,
-          },
-        },
+      local ts = require("nvim-treesitter")
+
+      ts.setup()
+
+      local ensure_installed = {
+        "lua", "vim", "vimdoc", "query",
+        "javascript", "typescript", "tsx",
+        "html", "css", "json", "yaml", "toml",
+        "markdown", "markdown_inline",
+        "bash", "regex",
+      }
+
+      local installed = {}
+      for _, lang in ipairs(ts.get_installed("parsers")) do
+        installed[lang] = true
+      end
+
+      local missing = vim.tbl_filter(function(lang)
+        return not installed[lang]
+      end, ensure_installed)
+
+      if #missing > 0 then
+        ts.install(missing)
+      end
+
+      -- On main, Neovim owns highlighting and this plugin only supplies
+      -- parsers and queries, so features are enabled per-buffer here.
+      vim.api.nvim_create_autocmd("FileType", {
+        callback = function(ev)
+          local lang = vim.treesitter.language.get_lang(ev.match)
+          if not lang or not pcall(vim.treesitter.start, ev.buf, lang) then
+            return
+          end
+          if vim.treesitter.query.get(lang, "indents") then
+            vim.bo[ev.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          end
+        end,
       })
     end,
   },
