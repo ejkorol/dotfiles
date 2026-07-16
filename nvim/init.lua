@@ -37,5 +37,8 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.signcolumn = "yes"
+vim.opt.winborder = "single"
+
+vim.opt.fillchars:append({ vert = " " })
 
 require("lazy").setup("plugins")

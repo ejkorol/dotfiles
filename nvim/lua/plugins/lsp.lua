@@ -12,16 +12,13 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
       "williamboman/mason-lspconfig.nvim",
-      "hrsh7th/cmp-nvim-lsp",
+      "saghen/blink.cmp",
     },
     config = function()
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-      -- Apply nvim-cmp capabilities to every LSP config
+      -- Apply blink.cmp capabilities to every LSP config
       vim.lsp.config("*", { capabilities = capabilities })
-
-      -- oxlint
-      vim.lsp.enable('oxlint')
 
       -- Per-server tweaks. lua_ls needs to know `vim` is a global or it'll yell.
       vim.lsp.config("lua_ls", {
@@ -40,12 +37,8 @@ return {
           vim.keymap.set("n", "<leader>de", vim.diagnostic.open_float, opts)
           vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
           vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-          vim.keymap.set("n", "K", function()
-            vim.lsp.buf.hover({ border = "rounded" })
-          end, opts)
-          vim.keymap.set({ "n", "i" }, "<C-k>", function()
-            vim.lsp.buf.signature_help({ border = "rounded" })
-          end, opts)
+          vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+          vim.keymap.set({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, opts)
           vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
           vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
           vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)

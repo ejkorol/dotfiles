@@ -1,6 +1,11 @@
 # Stuff i dont want to commit
-1Password
+herdr/
+1Password/
 zed/
+git/
 
 # Backup files
 *.bak
+
+# logs
+*.log

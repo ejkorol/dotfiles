@@ -30,7 +30,7 @@ return {
       },
       options = {
         offsets = {
-          { filetype = "neo-tree", text = "Explorer", text_align = "center", separator = true, highlight = "directory" },
+          { filetype = "neo-tree", text = "Explorer", text_align = "center", separator = false, highlight = "directory" },
         },
         diagnostics = "nvim_lsp",
         show_buffer_close_icons = false,

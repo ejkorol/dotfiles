@@ -38,8 +38,13 @@ return {
       vim.api.nvim_set_hl(0, "IblScope", { fg = "#F97316" })
 
       -- floats
-      vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+      vim.api.nvim_set_hl(0, "NormalFloat", { fg = "#e0e0e0", bg = "none" })
       vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#303030", bg = "none" })
+
+      -- blink.cmp borders link to Pmenu/NormalFloat by default, not FloatBorder
+      vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { link = "FloatBorder" })
+      vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", { link = "FloatBorder" })
+      vim.api.nvim_set_hl(0, "BlinkCmpSignatureHelpBorder", { link = "FloatBorder" })
     end,
   },
 }
