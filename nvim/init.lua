@@ -38,6 +38,8 @@ vim.opt.expandtab = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.signcolumn = "yes"
 vim.opt.winborder = "single"
+vim.opt.spelllang = "en_us"
+vim.opt.spell = true
 
 vim.opt.fillchars:append({ vert = " " })
 
