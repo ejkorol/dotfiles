@@ -28,6 +28,13 @@ vim.keymap.set('n', '<leader>v', '<cmd>vsplit<CR><C-w>l')
 -- go back from 'gd'
 vim.keymap.set('n', 'gb', '<C-o>')
 
+-- dictionary
+vim.keymap.set("n", "<leader>sn", "]s", { desc = "Next misspelled word" })
+vim.keymap.set("n", "<leader>sp", "[s", { desc = "Previous misspelled word" })
+vim.keymap.set("n", "<leader>sf", "z=", { desc = "Spell suggestions" })
+vim.keymap.set("n", "<leader>sa", "zg", { desc = "Add word to dictionary" })
+vim.keymap.set("n", "<leader>sr", "zug", { desc = "Undo add word" })
+
 vim.opt.wrap = false
 vim.opt.fillchars = { eob = " " }
 vim.opt.number = true
