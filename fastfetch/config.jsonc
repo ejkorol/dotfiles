@@ -25,137 +25,98 @@
     "break",
     {
       "type": "custom",
-      "format": "\u001b[92m╭────────────────────────── Hardware ─────────────────────────────╮"
+      "format": "Hardware"
     },
     {
       "type": "host",
-      "key": " PC:",
+      "key": "host: ",
       "keyColor": "green"
     },
     {
       "type": "cpu",
-      "key": "│ ",
+      "key": "cpu: ",
       "keyColor": "green"
     },
     {
       "type": "gpu",
-      "key": "│ 󰍛",
+      "key": "gpu: ",
       "keyColor": "green"
     },
     {
       "type": "memory",
-      "key": "│ 󰍛",
+      "key": "memory: ",
       "keyColor": "green"
     },
     {
       "type": "disk",
-      "key": "│ ",
+      "key": "disk: ",
       "keyColor": "green"
-    },
-    {
-      "type": "custom",
-      "format": "\u001b[92m╰─────────────────────────────────────────────────────────────────╯"
     },
     "break",
     {
       "type": "custom",
-      "format": "\u001b[93m╭────────────────────────── Software ─────────────────────────────╮"
+      "format": "Software"
     },
     {
       "type": "os",
-      "key": " OS:",
+      "key": "os: ",
       "keyColor": "yellow"
     },
     {
       "type": "kernel",
-      "key": "│ ",
-      "keyColor": "yellow"
-    },
-    {
-      "type": "bios",
-      "key": "│ ",
+      "key": "kernel: ",
       "keyColor": "yellow"
     },
     {
       "type": "shell",
-      "key": "│ ",
+      "key": "shell: ",
       "keyColor": "yellow"
-    },
-    {
-      "type": "packages",
-      "key": "│ 󰏗{#keys}{#34}",
-      "keyColor": "yellow",
-      "disabled": [
-        "apk"
-      ],
-      "combined": false
-    },
-    {
-      "type": "custom",
-      "format": "\u001b[93m╰─────────────────────────────────────────────────────────────────╯"
     },
     "break",
     {
       "type": "custom",
-      "format": "\u001b[94m╭────────────────────────── Desktop ──────────────────────────────╮"
+      "format": "Desktop"
     },
     {
       "type": "de",
-      "key": " DE",
-      "keyColor": "blue"
-    },
-    {
-      "type": "lm",
-      "key": "│ ",
-      "keyColor": "blue"
-    },
-    {
-      "type": "wm",
-      "key": "│ ",
+      "key": "env: ",
       "keyColor": "blue"
     },
     {
       "type": "wmtheme",
-      "key": "│ 󰉼",
+      "key": "theme: ",
       "keyColor": "blue"
     },
     {
       "type": "terminal",
-      "key": "│ ",
+      "key": "terminal: ",
       "keyColor": "blue"
-    },
-    {
-      "type": "custom",
-      "format": "\u001b[94m╰─────────────────────────────────────────────────────────────────╯"
     },
     "break",
     {
       "type": "custom",
-      "format": "\u001b[95m╭───────────────────── Uptime / Age / DT ─────────────────────────╮"
+      "format": "Uptime"
     },
     {
       "type": "command",
-      "key": "  OS Age ",
+      "key": "age",
       "keyColor": "magenta",
       "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
     },
     {
       "type": "uptime",
-      "key": "│  Uptime: ",
+      "key": "uptime: ",
       "keyColor": "magenta"
     },
     {
       "type": "datetime",
-      "key": "│  DateTime: ",
+      "key": "datetime: ",
       "keyColor": "magenta"
     },
-    {
-      "type": "custom",
-      "format": "\u001b[95m╰─────────────────────────────────────────────────────────────────╯"
-    },
+    "break",
     {
       "type": "colors",
-      "paddingLeft": 2,
+      "paddingLeft": 0,
       "symbol": "circle"
     }
   ]

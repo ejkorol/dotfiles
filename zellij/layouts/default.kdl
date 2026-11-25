@@ -16,4 +16,29 @@ layout {
             } 
         }
     }
+
+    tab name="nvim" focus=true {
+      pane command="nvim"
+    }
+
+    tab name="shells" split_direction="vertical" {
+      pane name="butler"
+      pane name="terminal"
+    }
+
+    tab name="herdr" {
+      pane
+    }
+
+    tab name="hunk" {
+      pane
+    }
+
+    tab name="btop" {
+      pane
+    }
+
+    tab name="terminal" {
+      pane
+    }
 }

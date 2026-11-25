@@ -3,6 +3,16 @@ herdr/
 1Password/
 zed/
 git/
+blender-mcp
+delulu
+uv
+vercel-plugin
+opencode
+jrnl
+
+fish/completions/docker.fish
+fish/completions/kubectl.fish
+fish/completions/orbctl.fish
 
 # Backup files
 *.bak
